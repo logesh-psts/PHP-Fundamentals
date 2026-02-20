@@ -119,5 +119,96 @@ switch ($assignmentsSubmitted) {
 
 
 
+//<?php
+$lightColor = "red"; 
+$timeOfDay = "night"; 
+$pedestrianButtonPressed = true;
+$emergencyVehicleDetected = true;
+$carsWaiting = 12;
+
+switch(true){
+
+case( $lightColor == "red"):
+echo "STOP - Wait for green"."<br>";
+switch(true){
+case ( $pedestrianButtonPressed == true ):
+echo "Pedestrian crossing - extended red"."<br>";
+break;
+} switch(true){
+case ($carsWaiting > 10):
+echo "High traffic detected at red light";
+break;
+}
+break;
+
+case( $lightColor == "yellow"):
+echo "CAUTION - Prepare to stop"."<br>";
+switch(true) {
+case ( $timeOfDay == "peak" ):
+echo "Peak hours - short yellow duration"."<br>";
+break;
+}
+switch (true) {
+case (  $timeOfDay == "night" ):
+echo "Night hours - extended yellow for safety";
+break;
+}
+break;
+
+
+case( $lightColor == "green"):
+echo "GO - Proceed with caution"."<br>";
+switch(true){
+case ( $carsWaiting > 15 ):
+echo "Heavy traffic flow - extended green"."<br>";
+break;
+}
+switch(true){
+case ( $pedestrianButtonPressed == true):
+echo " Pedestrian waiting - green will end soon"."<br>";
+break;
+}
+switch(true){
+case ( $timeOfDay == "night" ):
+echo  "Night mode - shorter green cycles"."<br>";
+break;
+}
+
+
+case( $lightColor == "flashing_yellow"):
+echo "PROCEED WITH CAUTION - Yield to traffic"."<br>";
+switch(true){
+case ( $timeOfDay == "night" ):
+echo "Night mode - proceed carefully"."<br>";
+break;
+}
+switch(true){
+case ( $emergencyVehicleDetected == false ):
+echo "Emergency vehicle approaching - be prepared to yield";
+break;
+}
+
+default:
+echo "Traffic light malfunction - proceed with extreme caution";
+
+
+case( $lightColor == "flashing_red"):
+echo "FULL STOP - Treat as stop sign"."<br>";
+switch(true){
+case ( $carsWaiting > 5 ):
+echo "Congestion at intersection - proceed one at a time"."<br>";
+break;
+}
+switch(true){
+case ( $timeOfDay == "peak" ):
+echo "Manual traffic control recommended"."<br>";
+break;
+}
+
+
+
+
+}
+//?> 
 
 ?>
